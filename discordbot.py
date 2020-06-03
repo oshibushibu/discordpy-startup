@@ -7,7 +7,6 @@ token = os.environ['DISCORD_BOT_TOKEN']
 
 CHANNEL_ID = 697732323659218966 #チャンネルID
 # 接続に必要なオブジェクトを生成
-client = discord.Client()
 
 
 #投稿する日時
@@ -22,7 +21,7 @@ dateTimeList = [
 ]
 
 # 起動時に動作する処理
-@client.event
+@bot.event
 async def on_ready():
     print('ready')
 
@@ -44,7 +43,7 @@ async def time_check():
         await asyncio.sleep(30)
 
 # メッセージ受信時に動作する処理
-@client.event
+@bot.event
 async def on_message(message):
     # メッセージ送信者がBotだった場合は無視する
     if message.author.bot:
@@ -56,4 +55,4 @@ async def on_message(message):
 #ループ処理
 loop.start()
 # Botの起動とDiscordサーバーへの接続
-client.run(token)
+bot.run(token)
