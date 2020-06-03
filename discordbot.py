@@ -6,14 +6,14 @@ bot = commands.Bot(command_prefix='/')
 token = os.environ['DISCORD_BOT_TOKEN']
 
 
-CHANNEL_ID = 挨拶雑談板 #チャンネルID
+CHANNEL_ID = 697732323659218966 #チャンネルID
 # 接続に必要なオブジェクトを生成
 client = discord.Client()
 
 
 #投稿する日時
 dateTimeList = [
-'2020/06/03 13:40',
+'2020/06/03 13:45',
 '2019/05/20 18:30',
 '2019/05/21 18:30',
 '2019/05/22 07:00',
