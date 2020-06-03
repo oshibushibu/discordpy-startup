@@ -19,7 +19,7 @@ async def ノノ(ctx):
     
     
 dateTimeList = [
-'2020/06/03 13:28',
+'2020/06/03 13:32',
 '2020/05/20 18:30',
 '2020/05/21 18:30',
 '2020/05/22 07:00',
@@ -29,7 +29,7 @@ dateTimeList = [
 ]
 
 # 起動時に動作する処理
-@client.event
+@bot.event
 async def on_ready():
     print('ready')
 
@@ -51,7 +51,7 @@ async def time_check():
         await asyncio.sleep(30)
 
 # メッセージ受信時に動作する処理
-@client.event
+@bot.event
 async def on_message(message):
     # メッセージ送信者がBotだった場合は無視する
     if message.author.bot:
