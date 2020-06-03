@@ -1,9 +1,8 @@
-from discord.ext import commands
-import os
-import traceback
+import discord
+from datetime import datetime
+from discord.ext import tasks
 
-bot = commands.Bot(command_prefix='/')
-token = os.environ['DISCORD_BOT_TOKEN']
+TOKEN = "NzAyODMyNTQ1OTcyMjI0MDQw.XtcV_g.YCmaTEH4xVjKHhjI5PBiPmnX9sw" #トークン
 
 
 CHANNEL_ID = 697732323659218966 #チャンネルID
@@ -13,7 +12,7 @@ client = discord.Client()
 
 #投稿する日時
 dateTimeList = [
-'2020/06/03 13:46',
+'2020/06/03 13:48',
 '2019/05/20 18:30',
 '2019/05/21 18:30',
 '2019/05/22 07:00',
