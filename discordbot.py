@@ -5,7 +5,6 @@ import traceback
 bot = commands.Bot(command_prefix='/')
 token = os.environ['DISCORD_BOT_TOKEN']
 
-CHANNEL_ID = 697732323659218966 #チャンネルID
 # 接続に必要なオブジェクトを生成
 
 
@@ -31,7 +30,7 @@ async def SendMessage():
     await channel.send('時間だよ')
 
 # 30秒に一回ループ
-@tasks.loop(seconds=30)
+@commands.loop(seconds=30)
 async def time_check():
     sleepTime = 0
     # 現在の時刻
