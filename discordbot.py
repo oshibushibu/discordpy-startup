@@ -6,36 +6,30 @@ bot = commands.Bot(command_prefix='/')
 token = os.environ['DISCORD_BOT_TOKEN']
 
 
-@bot.event
-async def on_command_error(ctx, error):
-    orig_error = getattr(error, "original", error)
-    error_msg = ''.join(traceback.TracebackException.from_exception(orig_error).format())
-    await ctx.send(error_msg)
+CHANNEL_ID = 挨拶雑談板 #チャンネルID
+# 接続に必要なオブジェクトを生成
+client = discord.Client()
 
 
-@bot.command()
-async def ノノ(ctx):
-    await ctx.send('あ')
-    
-    
+#投稿する日時
 dateTimeList = [
-'2020/06/03 13:35',
-'2020/05/20 18:30',
-'2020/05/21 18:30',
-'2020/05/22 07:00',
-'2020/05/23 07:00',
-'2020/05/24 07:00',
-'2020/05/25 07:00'
+'2020/06/03 13:40',
+'2019/05/20 18:30',
+'2019/05/21 18:30',
+'2019/05/22 07:00',
+'2019/05/23 07:00',
+'2019/05/24 07:00',
+'2019/05/25 07:00'
 ]
 
 # 起動時に動作する処理
-@bot.event
+@client.event
 async def on_ready():
     print('ready')
 
 # 指定時間に走る処理
 async def SendMessage():
-    channel = bot.get_channel(挨拶雑談板)
+    channel = client.get_channel(CHANNEL_ID)
     await channel.send('時間だよ')
 
 # 30秒に一回ループ
@@ -51,7 +45,7 @@ async def time_check():
         await asyncio.sleep(30)
 
 # メッセージ受信時に動作する処理
-@bot.event
+@client.event
 async def on_message(message):
     # メッセージ送信者がBotだった場合は無視する
     if message.author.bot:
@@ -60,6 +54,7 @@ async def on_message(message):
     if message.content == '!help':
         await message.channel.send('現在使用できるコマンドはありません')
 
-
-
-bot.run(token)
+#ループ処理
+time_check.start()
+# Botの起動とDiscordサーバーへの接続
+client.run(TOKEN)
