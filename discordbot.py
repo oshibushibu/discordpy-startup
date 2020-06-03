@@ -54,6 +54,6 @@ async def on_message(message):
         await message.channel.send('現在使用できるコマンドはありません')
 
 #ループ処理
-time_check.start()
+loop.start()
 # Botの起動とDiscordサーバーへの接続
 client.run(token)
