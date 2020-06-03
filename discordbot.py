@@ -52,7 +52,6 @@ async def on_message(message):
     if message.content == '!help':
         await message.channel.send('現在使用できるコマンドはありません')
 
-#ループ処理
-loop.start()
+
 # Botの起動とDiscordサーバーへの接続
 bot.run(token)
