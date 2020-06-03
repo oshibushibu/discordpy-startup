@@ -19,7 +19,7 @@ async def ノノ(ctx):
     
     
 dateTimeList = [
-'2020/06/03 13:32',
+'2020/06/03 13:35',
 '2020/05/20 18:30',
 '2020/05/21 18:30',
 '2020/05/22 07:00',
@@ -35,7 +35,7 @@ async def on_ready():
 
 # 指定時間に走る処理
 async def SendMessage():
-    channel = client.get_channel(CHANNEL_ID)
+    channel = bot.get_channel(挨拶雑談板)
     await channel.send('時間だよ')
 
 # 30秒に一回ループ
