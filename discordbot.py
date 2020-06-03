@@ -12,7 +12,7 @@ client = discord.Client()
 
 #投稿する日時
 dateTimeList = [
-'2020/06/03 14:13',
+'2020/06/03 14:15',
 '2019/05/20 18:30',
 '2019/05/21 18:30',
 '2019/05/22 07:00',
@@ -56,4 +56,4 @@ async def on_message(message):
 #ループ処理
 time_check.start()
 # Botの起動とDiscordサーバーへの接続
-client.run(TOKEN)
+client.run(token)
